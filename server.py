@@ -5,13 +5,12 @@ from flask.ext.sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
-#app.config.from_object('config')
+# app.config.from_object('config')
 db = SQLAlchemy(app)
-
-
 
 basedir = "/home/cheonying/Repos/Wayne/fbpage_scape2/"
 conffile = basedir+"emonhub.conf"
+
 
 @app.route('/')
 def index():
@@ -19,7 +18,7 @@ def index():
         content = f.read()
     return content
 
-# ------------------------------------------------------------------------------------    
+# ------------------------------------------------------------------------------------
 # MAIN PROGRAM
 # ------------------------------------------------------------------------------------
 
