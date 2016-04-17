@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <title>The Confession</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--<link href="static/style.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-responsive.min.css" rel="stylesheet">
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!--script to load Facebokk embed post-->
+    <script>(
+      function(d, s, id) {  
+        var js, fjs = d.getElementsByTagName(s)[0];  
+        if (d.getElementById(id)) return;  
+        js = d.createElement(s); 
+        js.id = id;  
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";  
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+  </head>
+
+  <body>
+    {% include 'submit.html' %}
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>  
+          </button>
+          <a class="navbar-brand" href="/index">Confession</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><a href="/hot">Hot</a></li>
+            <li><a href="/trend">Trending</a></li>
+            <li><a href="/fresh">Fresh</a></li>
+          </ul>
+          <!-- <ul role="separator" class="divider"></ul> -->
+          <ul class="nav navbar-nav navbar-right">
+            <li><span style="padding: 10px"><button type="button" class="btn btn-danger navbar-btn" data-toggle="modal" data-target="#myModal">Submit</button></span></li>
+            <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <hr>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3 col-lg-3">
+          <br>
+          <div class="thumbnail">
+          <h4> <b>For feedback come to our page!</b></h4>
+          
+            <div class="fb-page"
+              data-href="https://www.facebook.com/306608096208936"
+              data-width="300" 
+              data-hide-cover="false"
+              data-show-facepile="false" 
+              data-show-posts="false">
+            </div>
+
+          <div class="list-group">
+            <a href="#a" class="list-group-item"><b>UTAR</b></a>
+            <a href="#b" class="list-group-item active">SUNWAY</a>
+            <a href="#c" class="list-group-item">TAYLOR</a>
+            <a href="#d" class="list-group-item">SEGI</a>
+            <a href="#e" class="list-group-item">KDU</a>
+          </div>
+          </div>  
+        </div>
+        <div class="col-md-6 col-lg-6">
+          <br>
+          <div class="thumbnail">
+          {% block content %}{% endblock %}
+          </div>
+        </div>
+        <div class="col-md-3 col-lg-3" >
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
